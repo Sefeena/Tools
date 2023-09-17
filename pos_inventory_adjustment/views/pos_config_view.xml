@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--     <record model="ir.ui.view" id="pos_config_inventory_adjustment">
+        <field name="name">res.config.settings.inventory_adjustment</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h2[@name='pos_interface']" position="before">
+                <h2 class="">Inventory Adjustment</h2>
+                <div id="inventory_adjustment" class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                             <field name="pos_is_inventory_adjustment"/>
+                        </div>
+	                    <div class="o_setting_right_pane">
+	                        <label for="pos_is_inventory_adjustment" string="Inventory Adjustment"/>
+	                    </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="pos_adjst_location_id" string="Inventoried Location"/>
+                            <div class="content-group mt16">
+                                <field name='pos_adjst_location_id' attrs="{'required': [('pos_is_inventory_adjustment', '=', True)]}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+ -->
+    <record id="view_pos_inventory_adjustment_inherit" model="ir.ui.view">
+        <field name="name">POS Inventory Adjustment</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@groups='base.group_system']" position="before">
+                <h2 class="">Inventory Adjustment</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="pos_inventory_adjustment">
+                        <div class="o_setting_left_pane">
+                            <field name="is_inventory_adjustment"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_inventory_adjustment" string="Inventory Adjustment"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="adjst_location_id" string="Inventoried Location"/>
+                            <div class="content-group mt16">
+                                <field name='adjst_location_id' attrs="{'required': [('is_inventory_adjustment', '=', True)]}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+
+</odoo>
